@@ -16,6 +16,10 @@ public class NewMonoBehaviourScript : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             Debug.DrawRay(ray.origin, ray.direction * 5f, Color.red, 5f);
 
+            //get click point
+            RaycastHit2D hit = Physics2D.GetRayIntersection(ray, Mathf.Infinity);
+
+
         }
     }
 }
