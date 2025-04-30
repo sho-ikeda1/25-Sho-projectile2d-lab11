@@ -6,15 +6,16 @@ public class NewMonoBehaviourScript : MonoBehaviour
     [SerializeField] GameObject target; //target sprite
     [SerializeField] Rigidbody2D bulletPrefab;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetMouseButtonDown(0))
+        {
+            //shoot raycast to detect mouse clicked position
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            Debug.DrawRay(ray.origin, ray.direction * 5f, Color.red, 5f);
+
+        }
     }
 }
